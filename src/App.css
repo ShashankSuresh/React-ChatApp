@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  display: inline-block;
+}
+
+.App {
+  /* background-color: #1EE494; */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatroom {
+  width: 360px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.chatroom .chatroom-utils {
+  width: 100%;
+  background: linear-gradient(135deg, rgb(40, 110, 250), rgb(4, 64, 184));
+  position: relative;
+  text-align: center;
+}
+
+.chatroom h3 {
+  font-family: 'Pacifico', cursive;
+  color: #FFF;
+  margin: 0;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 80%;
+  margin-left: 38px;
+}
+
+.chatroom .close-icon {
+  float: left;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: red;
+  font-family: sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chatroom .delete-icon { 
+  display: none;
+  float: left;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: red;
+  font-family: sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chatroom #end-convo-banner {
+  display: none;
+  background: red;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.chatroom .chats {
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin: 10px 0 0;
+  height: 210px;
+  overflow-y: scroll;
+}
+
+.chatroom .chats .chat {
+  background: rgba(255, 255, 255, 0.8);
+  position: relative;
+  padding: 5px 13px;
+  font-size: 14px;
+  border-radius: 10px;
+  list-style: none;
+  float: left;
+  clear: both;
+  margin: 10px 0;
+  max-width: 200px;
+  position: relative;
+}
+
+.chatroom .chats .chat img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+}
+
+.chatroom .chats .chat.left {
+  background: linear-gradient(135deg, rgb(40, 110, 250), rgb(4, 64, 184));
+  color: #fff;
+}
+
+.chatroom .chats .chat.left:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgb(40, 110, 250) transparent transparent;
+}
+
+.chatroom .chats .chat.right {
+  float: right;
+  clear: both;
+  color: #000;
+  background-color: #f5f5f5;
+}
+
+.chatroom .chats .chat.right:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #f5f5f5;
+  ;
+}
+
+.plus-button--small {
+  font-size: 12px;
+}
+
+.plus-button--large {
+  font-size: 22px;
+}
+
+.chatroom .chats .timestamp {
+  position: absolute;
+  top: 28px;
+  width: 100px;
+  left: 5px;
+  font-size: 10px;
+  color: #101010;
+}
+
+.chatroom .chats .chat a {
+  text-decoration: none;
+  color: #3498DB;
+}
+
+.chatroom .input {
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(135deg, rgb(40, 110, 250), rgb(4, 64, 184));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.chatroom .input input[type="text"] {
+  outline: 0;
+  border: 1px solid #286efa;
+  padding: 0 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-left: 10px;
+  height: 30px;
+  width: 270px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.chatroom .input input[type="submit"] {
+  background: #fff;
+  color: #286efa;
+  border: 1px solid rgb(4, 64, 184);
+  height: 30px;
+  width: 70px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chatroom .input input[type="submit"]:hover {
+  background: linear-gradient(135deg, rgb(40, 110, 250), rgb(4, 64, 184));
+  color: #FFF;
+}
+
+.circle-plus {
+  height: 6em;
+  width: 6em;
+  font-size: 1em;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  cursor: pointer;
+}
+.circle-plus .circle {
+  position: relative;
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 100%;
+  border: solid 2px  rgb(40, 110, 250);
+  
+}
+.circle-plus .circle .horizontal {
+  position: absolute;
+  background: linear-gradient(135deg, rgb(40, 110, 250), rgb(4, 64, 184));
+  width: 2.4em;
+  height: 3px;
+  top: 33px;
+  left: 1.05em;
+}
+.circle-plus .circle .vertical {
+  position: absolute;
+  background: linear-gradient(135deg, rgb(40, 110, 250), rgb(4, 64, 184));
+  width: 3px;
+  height: 2.4em;
+  top: 17px;
+  left: 34px;
+}
+
+div#wave {
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+div#wave .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 3px;
+  background: #303131;
+  animation: wave 1.3s linear infinite;
+}
+div#wave .dot:nth-child(2) {
+  animation-delay: -1.1s;
+}
+div#wave .dot:nth-child(3) {
+  animation-delay: -0.9s;
+}
+
+@keyframes wave {
+  0%, 60%, 100% {
+    transform: initial;
+  }
+  30% {
+    transform: translateY(-15px);
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
